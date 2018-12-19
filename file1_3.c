@@ -183,11 +183,11 @@ int display_menu(void)
 	while(1)
 	{
 		system("clear");
-		printf("\n\n\t\t\t\tText Tetris");
+		printf("\n\n\t\t\t\t\x1b[31m Text Tetris\x1b[0m");
 		printf("\n\t\t\t============================");
 		printf("\n\t\t\t\t게 임 메 뉴\t\n");
 		printf("\n\t\t\t============================");
-		printf("\n\t\t\t=\t1) 게임 시작\t   =");
+		printf("\n\t\t\t=\t1)\x1b[33m 게임 시작\x1b[0m\t   =");
 		printf("\n\t\t\t=\t2) 기록 검색\t   =");
 		printf("\n\t\t\t=\t3) 기록 출력\t   =");
 		printf("\n\t\t\t=\t4) 종료\t\t   =");
@@ -320,7 +320,7 @@ int display_tetris_table(void)
 		for(j = 0 ; j < 4 ; j++)
 		{
 			if((*block_pointer)[0][i][j] == 1)
-				printf("#");
+				printf("\x1b[36m#\x1b[0m");
 			else if((*block_pointer)[0][i][j] == 0)
 				printf(" ");
 		}
@@ -333,10 +333,10 @@ int display_tetris_table(void)
 		{
 			if(j == 0 || j == 9|| (i == 20 && (j > 1 || j < 9)))
 			{
-				printf("@");
+				printf("\x1b[40m@\x1b[0m");
 			}
 			else if(tetris_table[i][j] == 1)
-				printf("#");
+				printf("\x1b[32m#\x1b[0m");
 			else if(tetris_table[i][j] == 0)
 				printf(" ");
 		}
